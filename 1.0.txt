@@ -1,0 +1,190 @@
+//Yadiel, Jose, Adelson
+//Programming Logic COMP 2120
+//Project
+
+#include <iostream>
+#include <unordered_set>
+#include <ctime>
+#include <algorithm>
+#include <cstdlib>
+
+using namespace std;
+
+string to_lower(const string& str){
+    string lower_str = str;
+    transform(lower_str.begin(), lower_str.end(), lower_str.begin(), ::tolower);
+    return lower_str;
+}
+
+int main(){
+    
+    //Yadiel (
+    
+    float gold;
+    
+    string opt, opt_menu, opt_item;
+    
+    unordered_set<string> item_menu = {
+        "weapons", "clothing", "potions", "food"
+    };
+    
+    unordered_set<string> items_weapons = {
+        "sword", "dagger", "bow", "Javelin", "stick", "cloak", "helmet", "medallion", "underwear", "pants"
+    };
+    
+    srand(time(0));
+    
+    int greet = rand() % 4 + 1;
+    int discount = rand() % 4 + 1;
+    
+    if(greet==1){
+        cout<<"Melvin The Merchant: Hello there traveller! Welcome to Melvin's shop of pure necessities, I'm Melvin... and this is my shop... of necessities. \n";
+    } else if(greet==2){
+        cout<<"Melvin The Merchant: Greetings, wanderer!\n";
+    } else if(greet==3){
+        cout<<"Melvin The Merchant: Hello there... do I know you? You look like that Bond fellow I met a while back. Nah, can't be.\n";
+    } else if(greet==4) {
+        cout<<"Melvin The Merchant: One second, I'll be right out! Gosh darn hammer, can't find it anywhere... Oh, hi there.\n";
+    }
+    
+    cout<<"Melvin The Merchant: Would you like to buy something? Please simply answer yes or no, I get confuzzled easily.\n";
+    cin>>opt;
+    opt = to_lower(opt);
+    
+    while(opt != "yes" && opt != "no"){
+        cout<<"Melvin The Merchant: Sorry, I must have not heard you correctly. Would you like to buy something?\n";
+        cin>>opt;
+        opt = to_lower(opt);
+    }
+                     //Yadiel end)
+    
+    if(opt == "yes") {
+
+        // AdelsonYadielCodeMix YadielDialogue(
+        
+        if(discount == 1) {  //weapon discount
+        cout<<"\nMelvin The Merchant: Wonderful! Let me show you what I've got. Oh, and if you're looking for weapons, then you, sir, are in luck! I've got a discount on all weapons right now!\n";
+        cout<<"Items for sale: \n";
+        cout<<"Weapons (discount 25% discount)\n";
+        cout<<"Clothing\n";
+        cout<<"Potions\n";
+        cout<<"Food\n";
+        }
+        else if(discount == 2) { //clothing discount
+        cout<<"\nMelvin The Merchant: Wonderful! Let me show you what I've got. Oh, and if you're looking for clothing, then you, sir, are in luck! I've got a discount on all clothing items right now!\n";
+        cout<<"Items for sale: \n";
+        cout<<"Weapons\n";
+        cout<<"Clothing (discount 25% discount)\n";
+        cout<<"Potions\n";
+        cout<<"Food\n";
+        }
+        else if(discount == 3) { //potion discount
+        cout<<"\nMelvin The Merchant: Wonderful! Let me show you what I've got. Oh, and if you're looking for potions, then you, sir, are in luck! I've got a discount on all my potions right now!\n";
+        cout<<"Items for sale: \n";
+        cout<<"Weapons\n";
+        cout<<"Clothing\n";
+        cout<<"Potions (discount 25% discount)\n";
+        cout<<"Food\n";
+        }
+        else if(discount == 4) { //food discount
+        cout<<"\nMelvin The Merchant: Wonderful! Let me show you what I've got. Oh, and if you're looking for food, then you, sir, are in luck! I've got a discount on all food related items right now!\n";
+        cout<<"Items for sale: \n";
+        cout<<"Weapons\n";
+        cout<<"Clothing\n";
+        cout<<"Potions\n";
+        cout<<"Food (discount 25% discount)\n";
+        }  
+
+        cin>>opt_menu;                                   
+        opt_menu= to_lower(opt_menu);
+        
+        if(opt_menu=="weapons" && discount == 1) {
+            cout<<"Melvin The Merchant: Oh, you're in the market for weapons, well you've come to the right place, here's what I got. 25% off all weapons!\n";
+            cout<<"Sword - 100 gold\n";
+            cout<<"Dagger - 37.50 gold\n";
+            cout<<"Javelin - 56.25 gold\n";
+            cout<<"Stick - 0.38 gold\n";
+            cout<<"Bow - 67.50 gold\n";
+            cout << "Sword - 75 gold\n";
+
+        }
+                                  //Adelson end)
+                                  
+        //Yadiel (
+        
+        else if(opt_menu=="weapons" && discount != 1) {
+           
+           //Jose stock prototype ((NO CONFIRMADO 100%!!!
+           
+            int stock_swords = 3 ; //av means stock available
+            int want ; //how many items of something the user wants
+            int stock_bought = 0  ; //this is what will be added based on the users buying
+            string inv_choice ; //what the user wants to buy from the section
+           
+            while (inv_choice != "x") {
+            cout<<"Melvin The Merchant: Oh, you're in the market for weapons, well you've come to the right place, here's what I got.\n";
+            cout<<"Sword - 100 gold. "<<"bought: "<<stock_bought<<"/"<<stock_swords<<"\n";
+            cout<<"Dagger - 50 gold\n";
+            cout<<"Javelin - 75 gold\n";
+            cout<<"Stick - 0.50 gold\n";
+            cout<<"Bow - 90 gold\n";
+            cout<<"Enter x to leave." ;
+            cout<<"\nWell then strange one, what is it that you desire?: " ;
+            cin>>inv_choice ;
+            inv_choice = to_lower(inv_choice) ;
+            
+            if (inv_choice =="sword") {
+                
+                cout<<"Interesting choice... but a wise one. I've got some in stock right now. The choice is yours.\n" ;
+                cout<<"\nBought: "<<stock_bought<<"\nAvailable: "<<stock_swords<<"\n" ;
+                cout<<"Now, how many do you desire? " ;
+                cin>>want ;
+                
+                if (want > stock_swords) {
+                    cout<<"\nIm sorry, but as you can see, the number of desired items is kind of limited. But please, try again.\n\n" ;
+                    continue;
+                } else if (want <= stock_swords) {
+                    
+                if (stock_bought != 3) {
+                    
+                        string dec ; //decision if they want to buy it or not
+                        cout<<"Are you sure you want to buy: "<<want<<"? (yes/no)" ;
+                        cin>> dec ;
+                        
+                        if (dec == "yes") {
+                            cout<<"You have bought"<<want<<" swords!!" ;
+                            stock_bought += want ;
+                        }
+                    
+                }
+                
+                }   
+            }
+        } 
+        }
+        else if(opt_menu=="clothing" && discount==2) {
+            cout<<"Melvin The Merchant: Oh, you're in the market for clothes, well you've come to the right place, here's what I got. 25% off all clothing items!\n";
+            cout<<"Cloak - 45 gold\n";
+            cout<<"Helmet - 60 gold\n";
+            cout<<"Medallion - 30 gold\n";
+            cout<<"Underwear - 7.50 gold\n";
+            cout<<"Pants - 26.25 gold\n";
+        } 
+        else if(opt_menu=="clothing" && discount!=2) {
+            cout<<"Melvin The Merchant: Oh, you're in the market for clothes, well you've come to the right place, here's what I got.\n";
+            cout<<"Cloak - 60 gold\n";
+            cout<<"Helmet - 80 gold\n";
+            cout<<"Medallion - 40 gold\n";
+            cout<<"Underwear - 10 gold\n";
+            cout<<"Pants - 35 gold\n";
+        }
+        
+        cin>>opt_item;
+        opt_item= to_lower(opt_item);
+        
+    } else if(opt=="no") {
+        cout<<"Melvin The Merchant: Oh... well, come back if you change your mind.\n";
+    }
+    
+    return 0;
+}
