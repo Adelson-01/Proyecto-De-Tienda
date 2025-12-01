@@ -139,14 +139,14 @@ int main() {
 				cin >> quantity;
 				if (cin.fail() || quantity <= 0 ) {
 					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cin.ignore(numeric_limits<streamsize>::max(), '\n'); /*chatgpt*/
 					cout<<"\nMelvin The Merchant: Um... you alright? If your looking for something free, you've come to the wrong place.\n";
 					cout<<"Would you like to keep purchasing? ";
 					getline(cin, cont);
 					cont=to_lower(cont);
 					continue;
 				}
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cin.ignore(numeric_limits<streamsize>::max(), '\n'); /*chatgpt*/
 
 				if(quantity > (w_stock[buying] - wstock_bought[buying])) {
 					cout<<"Sorry man, I don't have that much.\n";
@@ -213,14 +213,14 @@ int main() {
 				cin >> quantity;
 				if (cin.fail() || quantity <= 0 ) {
 					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  /*chatgpt*/
 					cout<<"\nMelvin The Merchant: Um... you alright? If your looking for something free, you've come to the wrong place.\n";
 					cout<<"Would you like to keep purchasing? ";
 					getline(cin, cont);
 					cont=to_lower(cont);
 					continue;
 				}
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  /*chatgpt*/
 
 				if(quantity > (c_stock[buying] - cstock_bought[buying])) {
 					cout<<"Sorry man, I don't have that much.\n";
@@ -286,14 +286,14 @@ int main() {
 				cin >> quantity;
 				if (cin.fail() || quantity <= 0 ) {
 					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  /*chatgpt*/
 					cout<<"\nMelvin The Merchant: Um... you alright? If your looking for something free, you've come to the wrong place.\n";
 					cout<<"Would you like to keep purchasing? ";
 					getline(cin, cont);
 					cont=to_lower(cont);
 					continue;
 				}
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  /*chatgpt*/
 
 				if(quantity > (p_stock[buying] - pstock_bought[buying])) {
 					cout<<"Sorry, I don't have that many.\n";
@@ -359,14 +359,14 @@ int main() {
 				cin >> quantity;
 				if (cin.fail() || quantity <=0) {
 					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  /*chatgpt*/
 					cout<<"Melvin The Merchant: Um... you alright? If your looking for something free, you've come to the wrong place.\n";
 					cout<<"Would you like to keep purchasing? ";
 					getline(cin, cont);
 					cont = to_lower(cont);
 					continue;
 				}
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  /*chatgpt*/
 
 				if (quantity > (f_stock[buying] - fstock_bought[buying])) {
 					cout<<"Sorry man, I don't have that much.\n";
